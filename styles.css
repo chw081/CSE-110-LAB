@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #182b49;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: white;
+    background-color: #182b49;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: white;
+    font-size: 28px;
+}
+
+#navbar img {
+    max-width: 400px;
+}
+
+.Section1 {
+    background-color: rgb(245, 240, 230);
+    display: inline-block;
+    scroll-margin-top: 146.5px;
+    padding: 40px 20px;
+}
+
+.Section1 p {
+    font-size: 28px;
+}
+
+.Section1 img {
+    max-width: 100%;
+}
+
+.Section2 {
+    background-image: url("https://www.ucsd.edu/_resources/img/bg-orbs-1.jpg");
+    display: inline-block;
+    color: white;
+    scroll-margin-top: 146.5px;
+    padding: 40px 20px;
+}
+
+.Section2 p {
+    font-size: 28px;
+}
+
+.Section2 img {
+    max-width: 100%;
+}
+
+.Section3 {
+    background-color: rgb(245, 240, 230);
+    display: inline-block;
+    scroll-margin-top: 146.5px;
+    padding: 40px 20px;
+}
+
+.Section3 p {
+    font-size: 28px;
+}
+
+.Section3 img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    align-items: center;
+}
+
+.wrapper .one {
+    background-color: #182b49;
+    color: white;
+    max-height: 500px;
+    overflow: scroll;
+}
+
+.wrapper .two {
+    background-color: #182b49;
+    color: white;
+    max-height: 500px;
+    overflow: scroll;
+}
+
+.wrapper .three {
+    background-color: #182b49;
+    color: white;
+    max-height: 500px;
+    overflow: scroll;
+}
+
+.wrapper .four {
+    background-color: #182b49;
+    color: white;
+    max-height: 500px;
+    overflow: scroll;
+}
