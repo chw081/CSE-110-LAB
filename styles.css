@@ -126,6 +126,26 @@ li a:hover {
     overflow: scroll;
 }
 
+.Section4 {
+    background-image: url("https://www.ucsd.edu/_resources/img/bg-orbs-1.jpg");
+    display: inline-block;
+    color: white;
+    scroll-margin-top: 146.5px;
+    padding: 40px 20px;
+}
+
+.Section4 h2 {
+    font-size: 35px;
+}
+
+.Section4 p {
+    font-size: 28px;
+}
+
+.Section4 img {
+    max-width: 100%;
+}
+
 @media only screen and (max-width: 800px) {
     li a {
         display: none;
