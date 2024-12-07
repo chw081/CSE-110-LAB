@@ -1,5 +1,6 @@
 //Constant.ts
 import { Label } from "./types";
+import { GroceryItem } from "./types";
 
 export const dummyNotesList = [
     {
@@ -40,7 +41,18 @@ export const dummyNotesList = [
     },
  ]
  
- export const dummyGroceryList = [
-    { name: "Apples", isPurchased: false },
-    { name: "Bananas", isPurchased: false },
- ]
+export const dummyLists: Record<string, GroceryItem[]> = {
+    default: [
+      { name: "Apples", isPurchased: false },
+      { name: "Bananas", isPurchased: false },
+    ],
+    weekend: [
+      { name: "Milk", isPurchased: false },
+      { name: "Bread", isPurchased: false },
+      { name: "Eggs", isPurchased: false },
+    ],
+    errands: [
+      { name: "Pick up laundry", isPurchased: false },
+      { name: "Buy stamps", isPurchased: false },
+    ],
+};

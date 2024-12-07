@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import { Label, Note } from "./types"; // Import the Label type from the appropriate module
 import { dummyNotesList } from "./constant"; // Import the dummyNotesList from the appropriate module
-import ToggleTheme, { ClickCounter } from './hooksExercise';
-import { ThemeContext, themes } from "./themeContext";
+import ToggleTheme from './hooksExercise';
 import { FavoriteNotes } from "./favNotes1";
 
 export const StickyNotes = () => {

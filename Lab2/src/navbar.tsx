@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { dummyLists } from "./constant";
 
 export const Navbar = () => {
   return (
@@ -11,18 +12,15 @@ export const Navbar = () => {
         >
           Home
         </NavLink>
-        <NavLink
-          to="/todolist/ABC"
-          className={({ isActive }) => (isActive ? "nav-link active-link" : "nav-link")}
-        >
-          ABC To Do List
-        </NavLink>
-        <NavLink
-          to="/todolist/DEF"
-          className={({ isActive }) => (isActive ? "nav-link active-link" : "nav-link")}
-        >
-          DEF To Do List
-        </NavLink>
+        {Object.keys(dummyLists).map((listName) => (
+          <NavLink
+            key={listName}
+            to={`/todolist/${listName}`}
+            className={({ isActive }) => (isActive ? "nav-link active-link" : "nav-link")}
+          >
+            {`${listName.charAt(0).toUpperCase() + listName.slice(1)} To Do List`}
+          </NavLink>
+        ))}
       </nav>
     </div>
   );
