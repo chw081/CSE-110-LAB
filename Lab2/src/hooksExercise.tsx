@@ -1,50 +1,66 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { ThemeContext, themes } from "./themeContext";
+import { ThemeContext, themes } from './themeContext';
+import './App.css';
 
 export function ClickCounter() {
-    const [count, setCount] = useState(0);
-    const theme = useContext(ThemeContext);
-    const handleClick = () => {
-    setCount(count + 1);
-    };
+  const [count, setCount] = useState(0);
+  const theme = useContext(ThemeContext);
 
-    useEffect(() => {
+  useEffect(() => {
     document.title = `You clicked ${count} times`;
-    }, [count]);
+  }, [count]);
 
-    return (
-        <div
-          style={{
-            background: theme.background,
-            color: theme.foreground,
-            padding: "20px",
-          }}
-        >
-          <p>You clicked {count} times </p>
-          <button
-            onClick={() => setCount(count + 1)}
-            style={{ background: theme.foreground, color: theme.background }}
-          >
-            Click me
-          </button>
-        </div>
-      );
+  return (
+    <div
+      className="click-counter"
+      style={{
+        background: theme.background,
+        color: theme.foreground,
+      }}
+    >
+      <p>You clicked {count} times</p>
+      <button
+        className="click-button"
+        style={{
+          background: theme.foreground,
+          color: theme.background,
+        }}
+        onClick={() => setCount(count + 1)}
+      >
+        Click me
+      </button>
+    </div>
+  );
 }
 
 function ToggleTheme() {
-    const [currentTheme, setCurrentTheme] = useState(themes.light);
-   
-    const toggleTheme = () => {
-      setCurrentTheme(currentTheme === themes.light ? themes.dark : 
-      themes.light);
- };
+  const [currentTheme, setCurrentTheme] = useState(themes.light);
 
-    return (
+  const toggleTheme = () => {
+    setCurrentTheme((prevTheme) => {
+      if (prevTheme === themes.light) return themes.dark;
+      if (prevTheme === themes.dark) return themes.morandi;
+      return themes.light; // Cycles back to light
+    });
+  };
+
+  return (
     <ThemeContext.Provider value={currentTheme}>
-        <button onClick={toggleTheme}> Toggle Theme </button>
+      <div className="toggle-theme">
+        <button
+          className="toggle-button"
+          style={{
+            background: currentTheme.foreground,
+            color: currentTheme.background,
+          }}
+          onClick={toggleTheme}
+        >
+          Toggle Theme
+        </button>
         <ClickCounter />
+      </div>
     </ThemeContext.Provider>
-    );
+  );
 }
 
 export default ToggleTheme;
